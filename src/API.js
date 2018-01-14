@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const API_KEY = '&appid=b714ec74bbab5650795063cb0fdf5fbe';
 
-const QUERY = 'http://api.openweathermap.org/data/2.5/forecast/daily?q='
+const QUERY = 'https://api.openweathermap.org/data/2.5/forecast/daily?q='
 
 export function getForecast(location) {
 
