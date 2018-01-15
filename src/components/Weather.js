@@ -10,7 +10,6 @@ class Weather extends React.Component {
     render() {
         return (
             <div>
-                <Header />
                 <WeatherSearch />
             </div>
         )

@@ -5,6 +5,8 @@ import roundTo from 'round-to';
 import SingleDay from './SingleDay';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import Redirect from 'react-router/Redirect';
+
 
 class Forecasts extends React.Component {
 
@@ -12,7 +14,8 @@ class Forecasts extends React.Component {
         location: queryString.parse(this.props.location.search).location,
         weatherData: null,
         error: null,
-        weekday: new Date().getDay()
+        weekday: new Date().getDay(),
+        redirect: false
     }
 
     componentDidMount() {
@@ -43,9 +46,11 @@ class Forecasts extends React.Component {
 
 
 
+
+
     render() {
 
-        const { location, weatherData, error, weekday } = this.state;
+        const { location, weatherData, error, weekday, redirect } = this.state;
 
         if (error) {
             return <h2> {error} </h2>
@@ -74,14 +79,15 @@ class Forecasts extends React.Component {
                     maxTemp={maxTemp}
                     weekday={weekday}
                     key={id}
-                    id={id} />
+                    id={id}
+                    search={this.props.location.search} />
             )
 
         })
 
+
         return (
             <div>
-                <Header />
                 <div className='weather-cards'>
                     {weatherForecast}
                 </div>
@@ -89,6 +95,7 @@ class Forecasts extends React.Component {
             </div>
 
         )
+
 
     }
 

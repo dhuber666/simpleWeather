@@ -22,7 +22,7 @@ export function getForecast(location) {
 
 export function getIconLink(iconID) {
 
-    const iconLink = `http://openweathermap.org/img/w/${iconID}.png`;
+    const iconLink = `https://openweathermap.org/img/w/${iconID}.png`;
 
     return iconLink;
 
